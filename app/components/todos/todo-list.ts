@@ -11,16 +11,7 @@ import {StatusPipe} from '../../pipes/status';
     selector: 'todo-list',
     pipes: [SearchPipe, StatusPipe],
     directives: [TodoItemRenderer],
-    template: `<div>
-    <ul>
-    <li *ngFor="#todo of todoService.todos | status:status | search:term" >
-        <todo-item-renderer
-        [todo]="todo"
-        (toggle)="todoService.toggleTodo($event)"
-        ></todo-item-renderer>
-    </li>
-    </ul>
-    </div>`
+    templateUrl: '/app/templates/todos/todo-list.html'
 })
 export class TodoList {
     @Input() status;

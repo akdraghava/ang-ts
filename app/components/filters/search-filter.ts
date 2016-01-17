@@ -8,9 +8,7 @@ import {Component, Output, EventEmitter} from 'angular2/core';
 
 @Component({
     selector: 'search-filter',
-    template: `<div>
-    search todo: <input type="text" #keyword (input)="search.emit(keyword.value)">
-    </div>`
+    templateUrl: '/app/templates/filters/search.html'
 })
 export class SearchFilter {
     @Output() search = new EventEmitter();

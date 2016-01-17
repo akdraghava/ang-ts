@@ -30,7 +30,7 @@ System.register(['angular2/core'], function(exports_1) {
                 StatusFilter = __decorate([
                     core_1.Component({
                         selector: 'status-filter',
-                        template: "<div>\n    <a (click)=\"select.emit('all')\">all</a>\n    <a (click)=\"select.emit('started')\">started</a>\n    <a (click)=\"select.emit('completed')\">completed</a>\n    </div>"
+                        templateUrl: '/app/templates/filters/status.html'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], StatusFilter);

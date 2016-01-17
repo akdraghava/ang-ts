@@ -30,7 +30,7 @@ System.register(['angular2/core'], function(exports_1) {
                 SearchFilter = __decorate([
                     core_1.Component({
                         selector: 'search-filter',
-                        template: "<div>\n    search todo: <input type=\"text\" #keyword (input)=\"search.emit(keyword.value)\">\n    </div>"
+                        templateUrl: '/app/templates/filters/search.html'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], SearchFilter);

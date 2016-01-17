@@ -2,23 +2,18 @@
  * Created by a548159 on 1/15/16.
  */
 import {Component} from 'angular2/core';
-import {TodoInput} from './todos/todo-input';
-import {TodoList} from './todos/todo-list';
-import {StatusFilter} from './filters/status-filter';
-import {SearchFilter} from './filters/search-filter';
+import {TodoComponent} from './todos/todo';
+import {DupeTodoComponent} from './todos/todo-dupe';
+import {RouteConfig,  ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
     selector: 'my-app',
-    directives: [TodoInput, TodoList, StatusFilter, SearchFilter],
-    template: `<div>
-    <search-filter (search)="term = $event"></search-filter>
-    <todo-input></todo-input>
-    <status-filter (select)="status = $event"></status-filter>
-    <todo-list
-        [status]="status"
-        [term]="term"
-    ></todo-list>
-    </div>
-    <p><strong></strong></p>`
+    directives: [ROUTER_DIRECTIVES],
+    templateUrl: '/app/templates/app.html'
 })
+@RouteConfig([
+    {path: '/',        component: TodoComponent, as: 'Home'},
+    {path: '/todo', component: DupeTodoComponent, as: 'Todo'  }
+])
+
 export class AppComponent { }

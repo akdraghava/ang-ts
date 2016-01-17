@@ -34,7 +34,7 @@ System.register(['angular2/core', '../../services/todo-service', '../../models/t
                 TodoInput = __decorate([
                     core_1.Component({
                         selector: 'todo-input',
-                        template: "<div>\n    <form (submit)=\"onSubmit()\">\n    <input type=\"text\" [(ngModel)]=\"todoModel.title\">\n    </form>\n    </div>"
+                        templateUrl: '/app/templates/todos/todo-input.html'
                     }), 
                     __metadata('design:paramtypes', [todo_service_1.TodoService])
                 ], TodoInput);

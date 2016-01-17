@@ -8,11 +8,7 @@ import {Component, Output, EventEmitter} from 'angular2/core';
 
 @Component({
     selector: 'status-filter',
-    template: `<div>
-    <a (click)="select.emit('all')">all</a>
-    <a (click)="select.emit('started')">started</a>
-    <a (click)="select.emit('completed')">completed</a>
-    </div>`
+    templateUrl: '/app/templates/filters/status.html'
 })
 export class StatusFilter {
     @Output() select = new EventEmitter();

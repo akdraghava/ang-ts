@@ -1,4 +1,4 @@
-System.register(['angular2/core', './todos/todo-input', './todos/todo-list', './filters/status-filter', './filters/search-filter'], function(exports_1) {
+System.register(['angular2/core', './todos/todo', './todos/todo-dupe', 'angular2/router'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,24 +8,21 @@ System.register(['angular2/core', './todos/todo-input', './todos/todo-list', './
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, todo_input_1, todo_list_1, status_filter_1, search_filter_1;
+    var core_1, todo_1, todo_dupe_1, router_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (todo_input_1_1) {
-                todo_input_1 = todo_input_1_1;
+            function (todo_1_1) {
+                todo_1 = todo_1_1;
             },
-            function (todo_list_1_1) {
-                todo_list_1 = todo_list_1_1;
+            function (todo_dupe_1_1) {
+                todo_dupe_1 = todo_dupe_1_1;
             },
-            function (status_filter_1_1) {
-                status_filter_1 = status_filter_1_1;
-            },
-            function (search_filter_1_1) {
-                search_filter_1 = search_filter_1_1;
+            function (router_1_1) {
+                router_1 = router_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -34,9 +31,13 @@ System.register(['angular2/core', './todos/todo-input', './todos/todo-list', './
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        directives: [todo_input_1.TodoInput, todo_list_1.TodoList, status_filter_1.StatusFilter, search_filter_1.SearchFilter],
-                        template: "<div>\n    <search-filter (search)=\"term = $event\"></search-filter>\n    <todo-input></todo-input>\n    <status-filter (select)=\"status = $event\"></status-filter>\n    <todo-list\n        [status]=\"status\"\n        [term]=\"term\"\n    ></todo-list>\n    </div>\n    <p><strong></strong></p>"
-                    }), 
+                        directives: [router_1.ROUTER_DIRECTIVES],
+                        templateUrl: '/app/templates/app.html'
+                    }),
+                    router_1.RouteConfig([
+                        { path: '/', component: todo_1.TodoComponent, as: 'Home' },
+                        { path: '/todo', component: todo_dupe_1.DupeTodoComponent, as: 'Todo' }
+                    ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;

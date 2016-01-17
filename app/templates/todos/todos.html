@@ -1,0 +1,9 @@
+<div>
+    <search-filter (search)="term = $event"></search-filter>
+    <todo-input></todo-input>
+    <status-filter (select)="status = $event"></status-filter>
+    <todo-list
+            [status]="status"
+            [term]="term">
+    </todo-list>
+</div>
